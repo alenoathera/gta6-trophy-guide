@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: official names, descriptions and grades, cited guides, platinum roadmap, missable watch list, saved checklist with export and import.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Leonida <span>Ledger</span></h1>
+  <p class="sub">GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, offline, in your own words with cited sources.</p>
+  <div class="progress-strip">
+    <div class="big-count"><span id="big-count">0</span><small> / 55 earned</small></div>
+    <div class="meter" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="meter"><i id="meter-fill" style="width:0%"></i></div>
+    <div class="grade-counts" id="grade-counts"></div>
+  </div>
+</header>
+<nav class="tabs" aria-label="Guide sections">
+  <a href="#/checklist" data-view="checklist">Checklist</a>
+  <a href="#/roadmap" data-view="roadmap">Platinum roadmap</a>
+  <a href="#/missables" data-view="missables">Missables</a>
+  <a href="#/progress" data-view="progress">Progress &amp; save</a>
+</nav>
+<main>
+  <section class="panel" id="view-checklist" aria-label="Trophy checklist">
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search trophy name or description…" aria-label="Search trophies">
+      <select id="grade-filter" aria-label="Filter by grade">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <select id="earned-filter" aria-label="Filter by earned state">
+        <option value="all">Earned + unearned</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Not earned yet</option>
+      </select>
+    </div>
+    <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+    <div class="spoiler-bar">
+      <label><input type="checkbox" id="spoiler-toggle"> Spoilers off — hide story trophy names &amp; descriptions until earned</label>
+      <span id="filter-summary"></span>
+    </div>
+    <div class="layout">
+      <div>
+        <ul class="trophies" id="trophy-list"></ul>
+        <p class="audit" id="audit-strip"></p>
+      </div>
+      <aside class="detail" id="detail" aria-label="Selected trophy guide"></aside>
+    </div>
+  </section>
+
+  <section class="panel" id="view-roadmap" aria-label="Platinum roadmap" hidden>
+    <h2>Roadmap to the platinum — Vice Got a Price!</h2>
+    <p>Built from the official trophy descriptions only: story chapters and named missions first, then character and stranger strands, then collectibles and exploration, then activities and combat, then money and cleanup. The platinum unlocks when the other 54 are earned. <strong>Counts below come from PSNProfiles' tracked targets</strong> (42 Shooting Range challenges, 14 drone-race locations, 18 meditation spots, 52 areas, 9 gangs, 8 garage properties).</p>
+    <div id="roadmap-stages"></div>
+    <p class="audit">Roadmap order is our reading of the official descriptions, not a claim about the game's internal mission order — that has not yet been checked in the game (it launched 19 Nov 2026).</p>
+  </section>
+
+  <section class="panel" id="view-missables" aria-label="Missable trophies" hidden>
+    <h2>Missable watch list — 14 trophies to do on time</h2>
+    <div class="warn-box"><strong>What “missable” means here:</strong> the trophy is tied to a specific story mission, a character strand's final mission, or a choice. Finish it while that mission or choice is in front of you, and keep a save before the finale. Whether mission replay covers a missed one has <strong>not yet been checked in the game</strong> — so treat these as do-it-now, not do-it-later.</div>
+    <ul class="miss-list" id="missable-list"></ul>
+    <p class="audit">Chapter trophies (Chapters 1–4) are <strong>not</strong> flagged missable: they unlock from story progress alone. Collectibles, activities, combat and money trophies are all repeatable in free roam as far as the official descriptions show.</p>
+  </section>
+
+  <section class="panel" id="view-progress" aria-label="Progress and save" hidden>
+    <h2>Progress &amp; save</h2>
+    <p>Your checklist is saved in this browser (localStorage) and never leaves your device. Export it to a file to back it up or move it to another browser, and import it back any time.</p>
+    <div class="stat-grid" id="stat-grid"></div>
+    <div id="grade-bars"></div>
+    <div class="toolbar">
+      <button type="button" class="primary" id="export-btn">Export progress (.json)</button>
+      <label>Import progress <input type="file" id="import-file" accept="application/json,.json"></label>
+      <button type="button" id="demo-btn">Load demo progress (13 / 55)</button>
+      <button type="button" id="reset-btn">Clear all progress</button>
+    </div>
+    <p id="save-status" role="status"></p>
+    <h3>Your notes</h3>
+    <p>Notes are saved in this browser alongside your checklist.</p>
+    <textarea class="note" id="notes" placeholder="e.g. Cards found so far: Vice City 4/6, Leonida Keys 2/6…"></textarea>
+  </section>
+</main>
+<footer>
+  <p>Leonida Ledger — an independent, offline fan guide. Names, descriptions and grades are PlayStation's official trophy list as published on Exophase and PSNProfiles (checked 20 Nov 2026). Guides are written in our own words for this guide and cite their sources beside each trophy. No Rockstar Games logo, artwork or game screenshots are used. Grand Theft Auto VI launched 19 Nov 2026; step-by-step locations not yet checked in the game are labelled as such rather than invented.</p>
+</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
