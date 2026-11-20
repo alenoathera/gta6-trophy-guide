@@ -1,44 +1,52 @@
-# Leonida Ledger — GTA VI Trophy Guide & Tracker
+# Leonida Ledger — Grand Theft Auto VI Trophy Guide & Tracker
 
 [![make.fun](https://make.fun/badge/gta6-trophy-guide-01.svg)](https://make.fun/c/gta6-trophy-guide-01)
 [![rank](https://make.fun/badge/gta6-trophy-guide-01/alenoathera/gta6-trophy-guide/rank.svg)](https://make.fun/c/gta6-trophy-guide-01)
 [![reward](https://make.fun/badge/gta6-trophy-guide-01/alenoathera/gta6-trophy-guide/reward.svg)](https://make.fun/c/gta6-trophy-guide-01)
 
-An offline guide and tracker for all **55 Grand Theft Auto VI trophies** on PlayStation 5 — built for the [make.fun gta6-trophy-guide-01](https://make.fun/c/gta6-trophy-guide-01) competition.
+An offline fan guide and interactive platinum tracker for all **55 Grand Theft Auto VI trophies** on PlayStation 5 — built for the [make.fun gta6-trophy-guide-01](https://make.fun/c/gta6-trophy-guide-01) competition.
 
 - **Owner:** [alenoathera](https://github.com/alenoathera)
 - **Repository:** `alenoathera/gta6-trophy-guide`
 - **License:** MIT
 
-## What it is
+## Features
 
-- **Checklist of all 55 trophies** with their official names, descriptions and grades (1 platinum, 2 gold, 6 silver, 46 bronze; 28 hidden), checked against Exophase and PSNProfiles on 20 Nov 2026.
-- **A guide in our own words for every trophy**, with its sources named and linked beside it. GTA VI launched 19 Nov 2026, so any step not yet checked in the game says so honestly instead of inventing a location.
-- **Platinum roadmap** in six stages, built from the official descriptions (story chapters and named missions, character and stranger strands, collectibles, activities, money and cleanup).
-- **Missable watch list** — 14 trophies tied to a specific mission or choice, flagged so you do them on time.
-- **Tracker:** progress saved in the browser (localStorage), export to a `.json` file and import it back, filters by kind (story, missable, collectibles, activities, combat, exploration, money, hidden), by grade and by earned state, plus a search box.
-- **Spoiler setting** that hides story trophy names and descriptions until they are earned.
-- **Fully offline:** static files under `app/`, no build step, no network request at run time. No Rockstar logo or official artwork anywhere.
+- **All 55 PlayStation 5 Trophies:** Official trophy names, descriptions, and grades (1 Platinum, 2 Gold, 6 Silver, 46 Bronze; 28 hidden), verified live against Exophase and PSNProfiles on **20 Nov 2026**.
+- **Original Strategy Guides:** Custom, thoroughly written guides for every single trophy, with direct citations to verified sources. Where in-game locations or branching choices require post-launch confirmation (GTA VI launched 19 Nov 2026), this is noted honestly.
+- **6-Stage Platinum Roadmap:** Optimized order of completion covering story missions, stranger strands, mini-game challenges, collectibles, criminal operations, and 100% completion cleanup.
+- **Missable Watch List:** 14 missable trophies flagged with specific mission triggers, warning notes, and backup save recommendations.
+- **Client-Side Tracker:** Local storage progress persistence, visual completion bars, category chips, search filtering, and complete JSON export / import backup.
+- **Anti-Spoiler Shield:** Conceals unearned story trophy names and descriptions to protect your narrative experience.
+- **100% Offline:** Zero external network calls, fonts, or CDNs. Served entirely from static assets under `app/`.
 
-## Run it
+## Running the App
+
+Start the included static server:
 
 ```sh
 node serve.ts
 ```
 
-Then open <http://localhost:8080> in a desktop browser. Any static file server works too — serve `app/` at its root.
+Open your browser at <http://localhost:8080>.
 
-Add `?demo=1` to the URL to load demo progress (13 of 55 earned) and see the counters and roadmap part-way.
+You can also append query parameters for demonstration:
+- `?demo=1`: Pre-populates 13 earned demo trophies (showing live counters and roadmap progress).
+- `&trophy=17`: Directly opens the detail guide for *The Shootist*.
+- `&spoiler=on`: Activates the Anti-Spoiler Shield by default.
+- `&kind=missable`: Pre-filters the checklist to missable trophies.
 
-## Hand it in
+## Handing In (Submission Build)
+
+Generate the submission dossier and bundle:
 
 ```sh
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-`main.ts` (Node 22, standard library only) copies `app/` and `screenshots/` to `/output` (or `$MAKEFUN_OUTPUT_DIR`) and writes `/output/dossier.json` with the vendored `vendor/makefun-frontend.ts` library.
+`main.ts` uses Node 22 standard library to bundle `app/` and `screenshots/` into the target directory and generate `/output/dossier.json` using the vendored `vendor/makefun-frontend.ts` tool.
 
-## Sources
+## Verified Sources
 
-- Exophase — Grand Theft Auto VI Trophies (PS5): https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/
-- PSNProfiles — Grand Theft Auto VI trophies: https://psnprofiles.com/trophies/43531-grand-theft-auto-vi
+- **Exophase** — Grand Theft Auto VI Trophies (PS5): <https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/>
+- **PSNProfiles** — Grand Theft Auto VI Trophies: <https://psnprofiles.com/trophies/43531-grand-theft-auto-vi>

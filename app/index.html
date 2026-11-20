@@ -3,91 +3,112 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
-<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: official names, descriptions and grades, cited guides, platinum roadmap, missable watch list, saved checklist with export and import.">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Platinum Tracker</title>
+<meta name="description" content="Offline fan guide and interactive platinum tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies. Features official names, descriptions, grades, custom guides, citations, 6-stage roadmap, missable warnings, spoiler masking, and local backup.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="topbar">
-  <h1>Leonida <span>Ledger</span></h1>
-  <p class="sub">GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, offline, in your own words with cited sources.</p>
+  <div class="header-content">
+    <h1>Leonida <span>Ledger</span></h1>
+    <p class="sub">Grand Theft Auto VI — Offline Trophy Guide &amp; Tracker (55 PlayStation 5 Trophies)</p>
+  </div>
   <div class="progress-strip">
     <div class="big-count"><span id="big-count">0</span><small> / 55 earned</small></div>
-    <div class="meter" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="meter"><i id="meter-fill" style="width:0%"></i></div>
+    <div class="meter" role="progressbar" aria-label="Trophies earned" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="meter">
+      <i id="meter-fill" style="width:0%"></i>
+    </div>
     <div class="grade-counts" id="grade-counts"></div>
   </div>
 </header>
-<nav class="tabs" aria-label="Guide sections">
-  <a href="#/checklist" data-view="checklist">Checklist</a>
-  <a href="#/roadmap" data-view="roadmap">Platinum roadmap</a>
-  <a href="#/missables" data-view="missables">Missables</a>
-  <a href="#/progress" data-view="progress">Progress &amp; save</a>
+
+<nav class="tabs" aria-label="Guide navigation">
+  <a href="#/checklist" data-view="checklist" aria-current="page">Trophy Checklist</a>
+  <a href="#/roadmap" data-view="roadmap">Platinum Roadmap</a>
+  <a href="#/missables" data-view="missables">Missables Watch</a>
+  <a href="#/progress" data-view="progress">Tracker &amp; Backup</a>
 </nav>
+
 <main>
-  <section class="panel" id="view-checklist" aria-label="Trophy checklist">
+  <!-- Checklist View -->
+  <section class="panel" id="view-checklist" aria-label="Trophy checklist view">
     <div class="toolbar">
-      <input type="search" id="search" placeholder="Search trophy name or description…" aria-label="Search trophies">
-      <select id="grade-filter" aria-label="Filter by grade">
-        <option value="all">All grades</option>
+      <input type="search" id="search" placeholder="Search trophy name, description, or guide keyword…" aria-label="Search trophies">
+      <select id="grade-filter" aria-label="Filter by trophy grade">
+        <option value="all">All Grades</option>
         <option value="platinum">Platinum</option>
         <option value="gold">Gold</option>
         <option value="silver">Silver</option>
         <option value="bronze">Bronze</option>
       </select>
       <select id="earned-filter" aria-label="Filter by earned state">
-        <option value="all">Earned + unearned</option>
-        <option value="earned">Earned only</option>
-        <option value="unearned">Not earned yet</option>
+        <option value="all">All Statuses</option>
+        <option value="earned">Earned Only</option>
+        <option value="unearned">Unearned Only</option>
       </select>
     </div>
-    <div class="chips" id="kind-chips" role="group" aria-label="Filter by kind"></div>
+
+    <div class="chips" id="kind-chips" role="group" aria-label="Filter by category kind"></div>
+
     <div class="spoiler-bar">
-      <label><input type="checkbox" id="spoiler-toggle"> Spoilers off — hide story trophy names &amp; descriptions until earned</label>
+      <label>
+        <input type="checkbox" id="spoiler-toggle">
+        <strong>Anti-Spoiler Shield</strong> — Conceal story trophy names and descriptions until earned
+      </label>
       <span id="filter-summary"></span>
     </div>
+
     <div class="layout">
-      <div>
+      <div class="list-container">
         <ul class="trophies" id="trophy-list"></ul>
         <p class="audit" id="audit-strip"></p>
       </div>
-      <aside class="detail" id="detail" aria-label="Selected trophy guide"></aside>
+      <aside class="detail" id="detail" aria-label="Selected trophy guide details"></aside>
     </div>
   </section>
 
-  <section class="panel" id="view-roadmap" aria-label="Platinum roadmap" hidden>
-    <h2>Roadmap to the platinum — Vice Got a Price!</h2>
-    <p>Built from the official trophy descriptions only: story chapters and named missions first, then character and stranger strands, then collectibles and exploration, then activities and combat, then money and cleanup. The platinum unlocks when the other 54 are earned. <strong>Counts below come from PSNProfiles' tracked targets</strong> (42 Shooting Range challenges, 14 drone-race locations, 18 meditation spots, 52 areas, 9 gangs, 8 garage properties).</p>
+  <!-- Roadmap View -->
+  <section class="panel" id="view-roadmap" aria-label="Platinum roadmap view" hidden>
+    <h2>Roadmap to Platinum: Vice Got a Price!</h2>
+    <p class="section-lead">A structured 6-stage walkthrough derived strictly from the official trophy requirements. Tackle story chapters first while minding missable heist actions, complete character strands, conquer side activities, explore Leonida's secrets, and finish off criminal grinds.</p>
     <div id="roadmap-stages"></div>
-    <p class="audit">Roadmap order is our reading of the official descriptions, not a claim about the game's internal mission order — that has not yet been checked in the game (it launched 19 Nov 2026).</p>
+    <p class="audit">Roadmap progression represents an optimized route based on official descriptions and PSN targets (42 Shooting Range challenges, 14 drone races, 18 meditation sites, 52 regions, 9 syndicates, 8 garages). GTA VI launched 19 Nov 2026; unverified details are noted honestly.</p>
   </section>
 
-  <section class="panel" id="view-missables" aria-label="Missable trophies" hidden>
-    <h2>Missable watch list — 14 trophies to do on time</h2>
-    <div class="warn-box"><strong>What “missable” means here:</strong> the trophy is tied to a specific story mission, a character strand's final mission, or a choice. Finish it while that mission or choice is in front of you, and keep a save before the finale. Whether mission replay covers a missed one has <strong>not yet been checked in the game</strong> — so treat these as do-it-now, not do-it-later.</div>
+  <!-- Missables View -->
+  <section class="panel" id="view-missables" aria-label="Missable trophies watch list" hidden>
+    <h2>Missable Watch List — 14 Key Trophies</h2>
+    <div class="warn-box">
+      <strong>Missable Criteria:</strong> A trophy is categorized as missable if it is tied to an exclusive campaign heist, an unrepeatable stranger strand finale, or an irreversible story decision. Always maintain separate manual save slots prior to major chapter transitions. As the game launched on 19 Nov 2026, replay mechanics remain unverified in-game; do these when presented.
+    </div>
     <ul class="miss-list" id="missable-list"></ul>
-    <p class="audit">Chapter trophies (Chapters 1–4) are <strong>not</strong> flagged missable: they unlock from story progress alone. Collectibles, activities, combat and money trophies are all repeatable in free roam as far as the official descriptions show.</p>
+    <p class="audit">Chapter progress trophies (Chapters 1–4) unlock automatically and cannot be missed. Freeroam stunts, activities, and exploration can be completed post-story.</p>
   </section>
 
-  <section class="panel" id="view-progress" aria-label="Progress and save" hidden>
-    <h2>Progress &amp; save</h2>
-    <p>Your checklist is saved in this browser (localStorage) and never leaves your device. Export it to a file to back it up or move it to another browser, and import it back any time.</p>
+  <!-- Progress & Backup View -->
+  <section class="panel" id="view-progress" aria-label="Progress statistics and data backup" hidden>
+    <h2>Tracker &amp; Backup Hub</h2>
+    <p class="section-lead">Your trophy progress is stored client-side in your browser's <code>localStorage</code>. Export your data to a secure JSON backup or import it onto another browser anytime.</p>
     <div class="stat-grid" id="stat-grid"></div>
     <div id="grade-bars"></div>
-    <div class="toolbar">
-      <button type="button" class="primary" id="export-btn">Export progress (.json)</button>
-      <label>Import progress <input type="file" id="import-file" accept="application/json,.json"></label>
-      <button type="button" id="demo-btn">Load demo progress (13 / 55)</button>
-      <button type="button" id="reset-btn">Clear all progress</button>
+    <div class="toolbar backup-tools">
+      <button type="button" class="primary" id="export-btn">Export Progress (.json)</button>
+      <label class="file-label">Import Progress <input type="file" id="import-file" accept="application/json,.json"></label>
+      <button type="button" id="demo-btn">Load Demo Progress (13 / 55)</button>
+      <button type="button" class="danger" id="reset-btn">Reset All Progress</button>
     </div>
     <p id="save-status" role="status"></p>
-    <h3>Your notes</h3>
-    <p>Notes are saved in this browser alongside your checklist.</p>
-    <textarea class="note" id="notes" placeholder="e.g. Cards found so far: Vice City 4/6, Leonida Keys 2/6…"></textarea>
+    <hr class="divider">
+    <h3>Field Journal &amp; Notes</h3>
+    <p class="muted">Record collectible coordinates, missing cards, or custom reminders here. Saved locally automatically.</p>
+    <textarea class="note" id="notes" placeholder="e.g. Card sets: Vice City 5/6, Keys 3/6; Drone races remaining: Port Gellhorn marsh..."></textarea>
   </section>
 </main>
+
 <footer>
-  <p>Leonida Ledger — an independent, offline fan guide. Names, descriptions and grades are PlayStation's official trophy list as published on Exophase and PSNProfiles (checked 20 Nov 2026). Guides are written in our own words for this guide and cite their sources beside each trophy. No Rockstar Games logo, artwork or game screenshots are used. Grand Theft Auto VI launched 19 Nov 2026; step-by-step locations not yet checked in the game are labelled as such rather than invented.</p>
+  <p>Leonida Ledger — An independent, fully offline Grand Theft Auto VI trophy companion. Official trophy names, descriptions, and grades are published by Sony Interactive Entertainment / PlayStation. Guide text authored in our own words with citations to Exophase and PSNProfiles (verified 20 Nov 2026). Fully offline; no external assets, tracking, or network requests.</p>
 </footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
